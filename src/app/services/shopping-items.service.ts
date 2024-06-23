@@ -17,4 +17,9 @@ export class ShoppingItemsService {
     this.items.push(item);
     this.isEmpty = false;
   }
+
+  removeItem(item: string) {
+    let index = this.items.findIndex( it => it === item);
+
+  }
 }
