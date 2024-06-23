@@ -31,4 +31,9 @@ export class ShoppingItemsService {
     }
     console.log('Después del borrado del item:', this.items);
   }
+
+  removeAllItems() {
+    this.items = [];
+    this.isEmpty = true;
+  }
 }
