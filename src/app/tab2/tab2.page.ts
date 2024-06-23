@@ -31,5 +31,12 @@ export class Tab2Page {
 
   addItem() {
     console.log("Item introducido por el usuario: ", this.item);
+    if (!this.shoppingList.existsItem(this.item)) {
+      this.shoppingList.addItem(this.item);
+      this.item = '';
+      console.log("Listado de items actual: ", this.shoppingList.items);
+    } else {
+      console.log("El item", this.item, "ya se encuentra en la lista así que no lo añadimos.");
+    }
   }
 }
