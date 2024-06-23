@@ -8,5 +8,8 @@ export class ShoppingItemsService {
   public items: string[];
   public isEmpty: boolean;
 
-  constructor() { }
+  constructor() {
+    this.items = [];
+    this.isEmpty = true;
+  }
 }
