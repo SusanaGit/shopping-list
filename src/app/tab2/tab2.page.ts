@@ -15,4 +15,7 @@ export class Tab2Page {
 
   constructor() {}
 
+  addItem() {
+    console.log("Item introducido por el usuario: ", this.item);
+  }
 }
