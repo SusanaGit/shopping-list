@@ -12,4 +12,9 @@ export class ShoppingItemsService {
     this.items = [];
     this.isEmpty = true;
   }
+
+  addItem(item: string) {
+    this.items.push(item);
+    this.isEmpty = false;
+  }
 }
