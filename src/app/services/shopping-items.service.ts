@@ -20,6 +20,8 @@ export class ShoppingItemsService {
 
   removeItem(item: string) {
     let index = this.items.findIndex( it => it === item);
-
+    if (index != -1) {
+      this.items.splice(index, 1);
+    }
   }
 }
