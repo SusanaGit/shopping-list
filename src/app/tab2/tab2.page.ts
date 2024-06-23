@@ -12,6 +12,7 @@ import {
 import {FormsModule} from "@angular/forms";
 import { addIcons } from 'ionicons';
 import { addOutline } from 'ionicons/icons';
+import {ShoppingItemsService} from "../services/shopping-items.service";
 
 @Component({
   selector: 'app-tab2',
@@ -24,7 +25,7 @@ export class Tab2Page {
 
   public item: string;
 
-  constructor() {
+  constructor(private shoppingList: ShoppingItemsService) {
     addIcons({addOutline})
   }
 
