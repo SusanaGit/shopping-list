@@ -9,6 +9,8 @@
 <ion-content [fullscreen]="true">
   <ion-item>
     <ion-input label="Item" type="text" [(ngModel)]="item" name="item"></ion-input>
-    <ion-button (click)="addItem()"></ion-button>
+    <ion-button (click)="addItem()">
+      <ion-icon name="add-outline"></ion-icon>
+    </ion-button>
   </ion-item>
 </ion-content>
