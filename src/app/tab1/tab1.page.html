@@ -7,4 +7,9 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
+  @if (shoppingList.isEmpty) {
+    <ion-item class="ion-text-center" lines="none">
+      <ion-label>No hay items en tu lista</ion-label>
+    </ion-item>
+  }
 </ion-content>
