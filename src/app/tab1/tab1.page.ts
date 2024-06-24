@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IonHeader, IonToolbar, IonTitle, IonContent } from '@ionic/angular/standalone';
+import {ShoppingItemsService} from "../services/shopping-items.service";
 
 @Component({
   selector: 'app-tab1',
@@ -9,5 +10,5 @@ import { IonHeader, IonToolbar, IonTitle, IonContent } from '@ionic/angular/stan
   imports: [IonHeader, IonToolbar, IonTitle, IonContent],
 })
 export class Tab1Page {
-  constructor() {}
+  constructor(public shoppingList: ShoppingItemsService) {}
 }
