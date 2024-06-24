@@ -28,7 +28,27 @@ export class Tab1Page {
     addIcons({ trashOutline });
   }
 
-  removeItem(item: string) {
-
+  async removeItem(item: string) {
+    const alert = await this.alertController.create({
+      header: 'Confirmación',
+      message: '¿Estás seguro de borrar el item?',
+      buttons: [
+        {
+          text: 'Si',
+          handler: () => {
+            this.shoppingList.removeItem(item);
+            console.log("Item", item, "eliminado de la lista de items.")
+            console.log("Listado de items actual: ", this.shoppingList.items);
+          }
+        },
+        {
+          text: 'No',
+          handler: () => {
+            console.log("Item", item, "no eliminado.")
+            alert.dismiss()
+          }
+        }]
+    })
+    await alert.present();
   }
 }
