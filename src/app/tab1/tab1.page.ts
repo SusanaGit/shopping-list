@@ -3,6 +3,7 @@ import {IonHeader, IonToolbar, IonTitle, IonContent, IonItem, IonLabel} from '@i
 import {ShoppingItemsService} from "../services/shopping-items.service";
 
 
+
 @Component({
   selector: 'app-tab1',
   templateUrl: 'tab1.page.html',

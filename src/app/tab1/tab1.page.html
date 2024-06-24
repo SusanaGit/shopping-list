@@ -11,5 +11,12 @@
     <ion-item class="ion-text-center" lines="none">
       <ion-label>No hay items en tu lista</ion-label>
     </ion-item>
+  } @else {
+    @for (item of shoppingList.items; track item) {
+      <ion-item lines="none">
+        <ion-label>{{item}}</ion-label>
+      </ion-item>
+    }
   }
+
 </ion-content>
