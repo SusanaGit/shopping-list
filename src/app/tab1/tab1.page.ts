@@ -25,4 +25,8 @@ export class Tab1Page {
   constructor(public shoppingList: ShoppingItemsService) {
     addIcons({ trashOutline });
   }
+
+  removeItem(item: string) {
+
+  }
 }
