@@ -6,7 +6,7 @@ import {
   IonContent,
   IonItem,
   IonLabel,
-  IonItemSliding, IonItemOptions, IonItemOption, IonIcon, AlertController
+  IonItemSliding, IonItemOptions, IonItemOption, IonIcon, AlertController, IonReorderGroup, IonReorder
 } from '@ionic/angular/standalone';
 import {ShoppingItemsService} from "../services/shopping-items.service";
 import {addIcons} from 'ionicons';
@@ -19,7 +19,7 @@ import {trashOutline} from 'ionicons/icons';
   templateUrl: 'tab1.page.html',
   styleUrls: ['tab1.page.scss'],
   standalone: true,
-  imports: [IonHeader, IonToolbar, IonTitle, IonContent, IonItem, IonLabel, IonItemSliding, IonItemOptions, IonItemOption, IonIcon],
+  imports: [IonHeader, IonToolbar, IonTitle, IonContent, IonItem, IonLabel, IonItemSliding, IonItemOptions, IonItemOption, IonIcon, IonReorderGroup, IonReorder],
 })
 export class Tab1Page {
   constructor(public shoppingList: ShoppingItemsService,
@@ -50,5 +50,15 @@ export class Tab1Page {
         }]
     })
     await alert.present();
+  }
+
+  onRenderItems($event: any) {
+    const item = this.shoppingList.items.splice($event.detail.from, 1)[0];
+
+    this.shoppingList.items.splice($event.detail.to, 0, item);
+
+    $event.detail.complete();
+
+    console.log(this.shoppingList.items);
   }
 }
