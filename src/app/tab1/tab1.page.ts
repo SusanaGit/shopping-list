@@ -6,7 +6,7 @@ import {
   IonContent,
   IonItem,
   IonLabel,
-  IonItemSliding, IonItemOptions, IonItemOption, IonIcon
+  IonItemSliding, IonItemOptions, IonItemOption, IonIcon, AlertController
 } from '@ionic/angular/standalone';
 import {ShoppingItemsService} from "../services/shopping-items.service";
 import {addIcons} from 'ionicons';
@@ -22,7 +22,9 @@ import {trashOutline} from 'ionicons/icons';
   imports: [IonHeader, IonToolbar, IonTitle, IonContent, IonItem, IonLabel, IonItemSliding, IonItemOptions, IonItemOption, IonIcon],
 })
 export class Tab1Page {
-  constructor(public shoppingList: ShoppingItemsService) {
+  constructor(public shoppingList: ShoppingItemsService,
+              private alertController: AlertController
+  ) {
     addIcons({ trashOutline });
   }
 
